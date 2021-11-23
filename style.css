@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url(https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/3/b/6/3b6991cd9f_49136_pleiades-cnes.jpg);
+    background-image: url(./wallpapersden.com_star-wars-the-clone-wars-4k_1920x1080.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -14,6 +14,12 @@ body{
 
 img{
     width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(189, 68, 68);
+    transition: 500ms;
 }
 
 #menu{
@@ -30,22 +36,27 @@ img{
     text-align: center;
     color: rgb(189, 68, 68);
     padding: 10px;
-    background-color: rgb(78, 70, 70);
+    background-color: rgb(78, 70, 70, 0.5);
     border: 3px solid rgb(214, 154, 24);
     border-radius: 10px;   
+    transition: 300ms;
 }
 
 #menu>div:hover{
     cursor: pointer;
+    cursor: pointer;
+    transform: scale(120%);
+    background-color: rgb(78, 70, 70);
+    transition: 300ms;
 }
 
 .principal,.secondaire{
-    display: none;
+    opacity: 0;
     font-size: 20px;
     margin: 100px;
     margin-bottom: 20px;
     padding: 50px;
-    background-color: rgb(78, 70, 70);
+    background-color: rgba(78, 70, 70, 0.5);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: rgb(189, 68, 68);
     border: 3px solid rgb(214, 154, 24);
@@ -70,7 +81,7 @@ img{
     text-align: center;
     color: rgb(189, 68, 68);
     padding: 10px;
-    background-color: rgb(78, 70, 70);
+    background-color: rgb(78, 70, 70, 0.5);
     border: 3px solid rgb(214, 154, 24);
     border-radius: 10px;
     transition: 300ms;
@@ -79,14 +90,18 @@ img{
 .next:hover,.previous:hover{
     cursor: pointer;
     transform: scale(120%);
+    background-color: rgb(78, 70, 70);
     transition: 300ms;
 }
 
 .clique{
-    border: 2px solid rgb(78, 70, 70);
+    border: 2px solid rgba(78, 70, 70, 0);
+    transition: 300ms;
 }
 .clique:hover{
     cursor: pointer;
     border: 2px solid rgb(214, 154, 24);
     border-radius: 5px;
+    transform: scale(102%);
+    transition: 300ms;
 }

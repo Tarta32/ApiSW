@@ -3,12 +3,12 @@
 
 $(".people").click(()=>{
     $.get("https://swapi.dev/api/people/").done((data)=>{
-        $(".secondaire").css('display','none')
+        $(".secondaire").css('opacity','0')
         $(".principal").html("")
-        $(".principal").css('display',"block")       
+        $(".principal").css('opacity','1')       
         $(".bouton").css('display',"flex")
         for (let i = 0; i<data.results.length;i++){
-            $(".principal").html($(".principal").html()+"<div class='clique' onclick='clickperso(\""+data.results[i].url+"\")'>"+data.results[i].name+"</div><br>")
+            $(".principal").html($(".principal").html()+"<div class='clique' onclick='clickperso(\""+data.results[i].url+"\")'>"+"<a href='#ancre'>"+data.results[i].name+"</a></div><br>")
         }
         if (data.next !== null){
             $('.next').css('display','block')
@@ -32,9 +32,9 @@ $(".people").click(()=>{
 
 $(".films").click(()=>{
     $.get("https://swapi.dev/api/films/").done((data)=>{
-        $('.secondaire').css('display','none')
+        $('.secondaire').css('opacity','0')
         $(".principal").html("")
-        $(".principal").css('display',"block")
+        $(".principal").css('opacity','1')
         $(".bouton").css('display',"flex")
         for (let i = 0; i<data.results.length;i++){
             $(".principal").html($(".principal").html()+"<div class='clique' onclick='clickfilm(\""+data.results[i].url+"\")'>"+data.results[i].title+"</div><br>")
@@ -61,9 +61,9 @@ $(".films").click(()=>{
 
 $(".starships").click(()=>{
     $.get("https://swapi.dev/api/starships/").done((data)=>{
-        $(".secondaire").css('display','none')
+        $(".secondaire").css('opacity','0')
         $(".principal").html("")
-        $(".principal").css('display',"block")       
+        $(".principal").css('opacity','1')       
         $(".bouton").css('display',"flex")
         for (let i = 0; i<data.results.length;i++){
             $(".principal").html($(".principal").html()+"<div class='clique' onclick='clickstar(\""+data.results[i].url+"\")'>"+data.results[i].name+"</div><br>")
@@ -90,9 +90,9 @@ $(".starships").click(()=>{
 
 $(".vehicles").click(()=>{
     $.get("https://swapi.dev/api/vehicles/").done((data)=>{
-        $(".secondaire").css('display','none')
+        $(".secondaire").css('opacity','0')
         $(".principal").html("")
-        $(".principal").css('display',"block")       
+        $(".principal").css('opacity','1')       
         $(".bouton").css('display',"flex")
         for (let i = 0; i<data.results.length;i++){
             $(".principal").html($(".principal").html()+"<div class='clique' onclick='clickvehicles(\""+data.results[i].url+"\")'>"+data.results[i].name+"</div><br>")
@@ -120,9 +120,9 @@ $(".vehicles").click(()=>{
 
 $(".species").click(()=>{
     $.get("https://swapi.dev/api/species/").done((data)=>{
-        $(".secondaire").css('display','none')
+        $(".secondaire").css('opacity','0')
         $(".principal").html("")
-        $(".principal").css('display',"block")       
+        $(".principal").css('opacity','1')       
         $(".bouton").css('display',"flex")
         for (let i = 0; i<data.results.length;i++){
             $(".principal").html($(".principal").html()+"<div class='clique' onclick='clickspecies(\""+data.results[i].url+"\")'>"+data.results[i].name+"</div><br>")
@@ -149,9 +149,9 @@ $(".species").click(()=>{
 
 $(".planets").click(()=>{
     $.get("https://swapi.dev/api/planets/").done((data)=>{
-        $(".secondaire").css('display','none')
+        $(".secondaire").css('opacity','0')
         $(".principal").html("")
-        $(".principal").css('display',"block")       
+        $(".principal").css('opacity','1')       
         $(".bouton").css('display',"flex")
         for (let i = 0; i<data.results.length;i++){
             $(".principal").html($(".principal").html()+"<div class='clique' onclick='clickplanets(\""+data.results[i].url+"\")'>"+data.results[i].name+"</div><br>")
@@ -180,9 +180,9 @@ $(".planets").click(()=>{
 
 function clicknext(url,nomDeFonction){
     $.get(url).done((data)=>{
-        $(".secondaire").css('display','none')
+        $(".secondaire").css('opacity','0')
         $(".principal").html("")
-        $(".principal").css('display',"block")       
+        $(".principal").css('opacity','1')       
         $(".bouton").css('display',"flex")
         for (let i = 0; i<data.results.length;i++){
             $(".principal").html($(".principal").html()+"<div class='clique' onclick='"+nomDeFonction+"(\""+data.results[i].url+"\")'>"+data.results[i].name+"</div><br>")
@@ -209,9 +209,9 @@ function clicknext(url,nomDeFonction){
 
 function clickprevious(url,nomDeFonction){
     $.get(url).done((data)=>{
-        $(".secondaire").css('display','none')
+        $(".secondaire").css('opacity','0')
         $(".principal").html("")
-        $(".principal").css('display',"block")       
+        $(".principal").css('opacity','1')       
         $(".bouton").css('display',"flex")
         for (let i = 0; i<data.results.length;i++){
             $(".principal").html($(".principal").html()+"<div class='clique' onclick='"+nomDeFonction+"(\""+data.results[i].url+"\")'>"+data.results[i].name+"</div><br>")
@@ -240,7 +240,7 @@ function clickprevious(url,nomDeFonction){
 function clickperso(url){
     $.get(url).done((data)=>{
         $(".secondaire").html('')
-        $(".secondaire").css('display','block')
+        $(".secondaire").css('opacity','1')
         $(".secondaire").html($(".secondaire").html()+"Nom : "+data.name+"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Taille : "+data.height+' Cm' +"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Poids : "+data.mass+" Kg <br><br>")
@@ -256,7 +256,7 @@ function clickperso(url){
 function clickfilm(url){
     $.get(url).done((data)=>{
         $(".secondaire").html('')
-        $(".secondaire").css('display','block')
+        $(".secondaire").css('opacity','1')
         $(".secondaire").html($(".secondaire").html()+"Titre : "+data.title+"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Episode : "+data.episode_id+"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Synopsis : "+data.opening_crawl+"<br><br>")
@@ -270,7 +270,7 @@ function clickfilm(url){
 function clickstar(url){
     $.get(url).done((data)=>{
         $(".secondaire").html('')
-        $(".secondaire").css('display','block')
+        $(".secondaire").css('opacity','1')
         $(".secondaire").html($(".secondaire").html()+"Nom : "+data.name+"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Modèle : "+data.model+"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Fabricant : "+data.manufacturer+"<br><br>")
@@ -288,7 +288,7 @@ function clickstar(url){
 function clickvehicles(url){
     $.get(url).done((data)=>{
         $(".secondaire").html('')
-        $(".secondaire").css('display','block')
+        $(".secondaire").css('opacity','1')
         $(".secondaire").html($(".secondaire").html()+"Nom : "+data.name+"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Modèle : "+data.model+"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Fabricant : "+data.manufacturer+"<br><br>")
@@ -305,7 +305,7 @@ function clickvehicles(url){
 function clickspecies(url){
     $.get(url).done((data)=>{
         $(".secondaire").html('')
-        $(".secondaire").css('display','block')
+        $(".secondaire").css('opacity','1')
         $(".secondaire").html($(".secondaire").html()+"Nom : "+data.name+"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Classification : "+data.classification+"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Designation : "+data.designation+"<br><br>")
@@ -323,7 +323,7 @@ function clickspecies(url){
 function clickplanets(url){
     $.get(url).done((data)=>{
         $(".secondaire").html('')
-        $(".secondaire").css('display','block')
+        $(".secondaire").css('opacity','1')
         $(".secondaire").html($(".secondaire").html()+"Nom : "+data.name+"<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Periode de rotation : "+data.rotation_period+" heures<br><br>")
         $(".secondaire").html($(".secondaire").html()+"Periode de revolution : "+data.orbital_period+" jours<br><br>")
